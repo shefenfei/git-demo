@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.lang.annotation.Retention;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @SpringBootApplication
 public class DemoStudyGitApplication {
@@ -19,6 +21,13 @@ public class DemoStudyGitApplication {
     @RequestMapping("/test")
     class TestController {
         public ResponseEntity sayHello() {
+            String patternReg = "\\d+";
+            Pattern compile = Pattern.compile(patternReg);
+            Matcher matcher = compile.matcher("");
+            while (matcher.find()) {
+                String group = matcher.group(0);
+
+            }
             return ResponseEntity.ok("");
         }
     }
